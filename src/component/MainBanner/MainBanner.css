@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap');
+
+.background{
+    height: 200px;
+    background-image: url("/src/img/back1.jpg");
+    background-size: contain;
+    color: dimgrey;
+    font-size: large;
+    font-style: italic;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lora', sans-serif;
+    line-height: 1.5;
+}
+
+.bannerButton {
+    background-color: rosybrown;
+    color: white;
+    border-color: gray;
+    border-radius: 5px;
+    margin-top: 10px;
+}

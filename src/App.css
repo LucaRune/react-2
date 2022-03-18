@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    font-style: normal;
+    margin: 0;
+    word-break: keep-all;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    background: white !important;
+    font-size: 10px;
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ElementCardSection{
+    font-family: "Noto Sans KR", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ElementCardWrapper{
+    width: 33.33%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.layoutContainer{
+
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    min-width: 320px;
+    flex: 1;
+    padding-bottom: 100px;
+    min-height: 100%;
+
+}
+.containerInner{
+    width: 92%;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.name{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 5px;
+}
+.price{
+    margin-top: 3px;
+    padding-left: 7px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+@media (max-width: 800px) {
+    .ElementCardWrapper{
+        width: 50%;
+    }
+}@media (max-width: 545px) {
+    .ElementCardWrapper{
+        width: 100%;
+    }
+}
+@media (min-width: 1300px) {
+    .ElementCardWrapper{
+        width: 25%;
+    }
+}
+@media (min-width: 1600px) {
+    .ElementCardWrapper{
+        width: 20%;
+    }
 }
