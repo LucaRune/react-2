@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
 import Detail from "./component/Detail/Detail";
+import MainBanner from "./component/MainBanner/MainBanner";
 import data from "./data";
 
 import one from './img/one.jpg';
@@ -9,14 +10,17 @@ import two from './img/two.jpg';
 import flower from './img/flower.png';
 
 import {Link, Route, Switch, useHistory} from "react-router-dom";
-import {useState} from "react";
-import MainBanner from "./component/MainBanner/MainBanner";
+import {useEffect, useState} from "react";
 
 function App() {
 
     let [icon,seticon] = useState(data);
     const[num,setnum] = useState([one,two,flower]);
     const history = useHistory();
+
+    useEffect(()=>{
+        console.log(1111)
+    });
 
 
     return (
@@ -48,11 +52,11 @@ function App() {
                     <Detail icon={icon}/>
                     <Footer/>
                 </Route>
-                <Route path="/detail">
-                    <Navbar/>
-                    <img src="https://i.pinimg.com/564x/4d/67/95/4d679558dc044124695c37000a04b6be.jpg"/>
-                    <Footer/>
-                </Route>
+                {/*<Route path="/detail">*/}
+                {/*    <Navbar/>*/}
+                {/*    <img src="https://i.pinimg.com/564x/4d/67/95/4d679558dc044124695c37000a04b6be.jpg"/>*/}
+                {/*    <Footer/>*/}
+                {/*</Route>*/}
             </div>
         </div>
     );
