@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, useHistory, useParams } from "react-router-dom";
 import styled from 'styled-components';
 import './Detail.css';
@@ -25,6 +25,16 @@ const Detail = (props) => {
 
     const { id } = useParams();     //id = :id 자리에 있던 숫자
 
+    const [inputData,setinputData] = useState('');
+    const [alert,setalert] = useState(true);
+
+    useEffect(()=>{ // 컴포넌트가 mount, update 될 때 특정 코드를 실행할 수 있음, 여러개 사용 가능, 내부에 return 가능
+       const 타이머 =  setTimeout(()=>{    // X 초 후에 코드 실행 -> setTimeout 함수 이용
+            setalert(false)}, 2000)    // 2초 후에 알럿 창을 안보이게
+        // console.log('dd')
+        return ()=>{clearTimeout(타이머)} // <Detail>이 사라질 때 실행할 코드
+    },[alert]);    // 알럿이 업데이트될때만 실행하게
+
     return (
         <div className="text">
             <박스>
@@ -32,10 +42,16 @@ const Detail = (props) => {
                 <제목 색상={'gray'}>Detail Page</제목>
                 <div className='red'>SASS</div>
             </박스>
+            {inputData}
+            <input onChange={(e)=>{setinputData(e.target.value)}}/>
 
             <div className='my-alert'>Almost Sold Out !</div>
             <div className='my-alert2'>Almost Sold Out !</div>
             <div className='my-alert3'>Almost Sold Out !</div>
+
+            {
+                alert === true ? <div className='my-alert2'>Almost Sold Out !</div> : null
+            }
 
             <img src={num[id]} width={250}/>
             <h4 >{props.icon[id].title}</h4>

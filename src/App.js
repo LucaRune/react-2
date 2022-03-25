@@ -11,6 +11,7 @@ import flower from './img/flower.png';
 
 import {Link, Route, Switch, useHistory} from "react-router-dom";
 import {useEffect, useState} from "react";
+import axios from "axios";
 
 function App() {
 
@@ -18,9 +19,6 @@ function App() {
     const[num,setnum] = useState([one,two,flower]);
     const history = useHistory();
 
-    useEffect(()=>{
-        console.log(1111)
-    });
 
 
     return (
@@ -44,13 +42,16 @@ function App() {
                                     })
                                 }
                         </section>
-                        <Footer/>
+                        <button className='moreBtn' onClick={()=>{
+                            axios.get('https://codingapple1.github.io/shop/data211.json')
+                                .then((result)=>{console.log(result.data)}) // 성공하면 실행
+                                .catch(()=>{console.log('실패했습니다')}) // 실패하면 실행
+                        }}>MORE</button>
                     </div>
                 </Route>
                 <Route path="/detail/:id">
                     <Navbar/>
                     <Detail icon={icon}/>
-                    <Footer/>
                 </Route>
                 {/*<Route path="/detail">*/}
                 {/*    <Navbar/>*/}
@@ -58,6 +59,7 @@ function App() {
                 {/*    <Footer/>*/}
                 {/*</Route>*/}
             </div>
+            <Footer/>
         </div>
     );
 }
