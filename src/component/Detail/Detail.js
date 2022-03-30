@@ -35,6 +35,13 @@ const Detail = (props) => {
         return ()=>{clearTimeout(타이머)} // <Detail>이 사라질 때 실행할 코드
     },[alert]);    // 알럿이 업데이트될때만 실행하게
 
+    const [loading,setloading] = useState(false);
+    const Load = ()=>{
+        return(
+            loading === true ? <div className='LoadingUI'>Loding...</div> : null
+        )
+    }
+
     return (
         <div className="text">
             <박스>

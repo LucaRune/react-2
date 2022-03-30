@@ -79,6 +79,18 @@ html {
 }
 
 .moreBtn{
-    width: 20%;
-    margin-top: 30px;
+    width: 15%;
+    margin: 10% auto auto auto;
+    background-color: mistyrose;
+    border-radius: 5px;
+    display: block;
+}
+
+.LoadingUI{
+    background: cornflowerblue;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
 }
